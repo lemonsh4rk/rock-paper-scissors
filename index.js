@@ -1,4 +1,8 @@
 let gameOver = false;
+let gamesLeft = 5;
+let i = 0;
+let playerScore = 0;
+let computerScore = 0;
 while (!gameOver) {
   function getComputerChoice() {
     let choice = ["rock", "paper", "scissors"];
@@ -7,35 +11,58 @@ while (!gameOver) {
   }
 
   function getPlayerChoice() {
-      let playerChoice = prompt("Choose: Rock - Paper or Scissors!") ;
-      return playerChoice.toLocaleLowerCase();
+    let playerChoice = prompt("Choose: Rock - Paper or Scissors!") ;
+    return playerChoice.toLocaleLowerCase();
   }
   
   function rockPaperScissors(playerSelection, computerSelection) {
+
     console.log(`You played: ${playerSelection}`);
     console.log(`Computer played: ${computerSelection}`)
-  if ((playerSelection === "rock") && (computerSelection === "paper")) {
-    console.log("You lose, good luck next time!")
-    gameOver = true;
-  } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
-    console.log("You lose, good luck next time!")
-    gameOver = true;
-  } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
-    console.log("You lose, good luck next time!")
-    gameOver = true;
-  } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
-    console.log("You win, congratulations!")
-    gameOver = true;
-  } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
-    console.log("You win, congratulations!")
-    gameOver = true;
-  } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
-    console.log("You win, congratulations!")
-    gameOver = true;
-  } else if (playerSelection === computerSelection){
-    console.log(`You tied, try again!`);
+
+    if ((playerSelection === "rock") && (computerSelection === "paper")) {
+      i++;
+      computerScore++;
+      console.log(`You lose this one!
+      You have ${gamesLeft - i} games left`);
+    } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
+      i++;
+      computerScore++;
+      console.log(`You lose this one!
+      You have ${gamesLeft - i} games left`);
+    } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
+      i++;
+      computerScore++;
+      console.log(`You lose this one!
+      You have ${gamesLeft - i} games left`);
+    } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
+      i++;
+      playerScore++;
+      console.log(`You win this one!
+      You have ${gamesLeft - i} games left`);
+    } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
+      i++;
+      playerScore++;
+      console.log(`You win this one!
+      You have ${gamesLeft - i} games left`);
+    } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
+      i++;
+      playerScore++;
+      console.log(`You win this one!
+      You have ${gamesLeft - i} games left`);
+    } else if (playerSelection === computerSelection){
+      i++;
+      console.log(`You tied, try again! 
+      You have ${gamesLeft - i} games left`);
+    } else {
+      console.log(`Invalid input, please try again with: rock - paper - scissors
+      You have ${gamesLeft - i} games left`);
+    }
+  }
+
+  if (i < gamesLeft) {
+    rockPaperScissors(getPlayerChoice(), getComputerChoice());
   } else {
     gameOver = true;
-  }}
-  rockPaperScissors(getPlayerChoice(), getComputerChoice())
+  }
 }
