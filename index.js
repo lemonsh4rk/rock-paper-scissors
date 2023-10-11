@@ -23,40 +23,32 @@ while (!gameOver) {
     if ((playerSelection === "rock") && (computerSelection === "paper")) {
       i++;
       computerScore++;
-      console.log(`You lose this one!
-      You have ${gamesLeft - i} games left`);
+      console.log(`You lose this one!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
       i++;
       computerScore++;
-      console.log(`You lose this one!
-      You have ${gamesLeft - i} games left`);
+      console.log(`You lose this one!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
       i++;
       computerScore++;
-      console.log(`You lose this one!
-      You have ${gamesLeft - i} games left`);
+      console.log(`You lose this one!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
       i++;
       playerScore++;
-      console.log(`You win this one!
-      You have ${gamesLeft - i} games left`);
+      console.log(`You win this one!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
       i++;
       playerScore++;
-      console.log(`You win this one!
-      You have ${gamesLeft - i} games left`);
+      console.log(`You win this one!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
       i++;
       playerScore++;
-      console.log(`You win this one!
-      You have ${gamesLeft - i} games left`);
+      console.log(`You win this one!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else if (playerSelection === computerSelection){
       i++;
-      console.log(`You tied, try again! 
-      You have ${gamesLeft - i} games left`);
+      console.log(`You tied, try again!\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     } else {
-      console.log(`Invalid input, please try again with: rock - paper - scissors
-      You have ${gamesLeft - i} games left`);
+      console.log(`Invalid input, please try again with: rock - paper - scissors\nYou have ${gamesLeft - i} games left\nCurrent Score is: Player:${playerScore} - PC:${computerScore}`);
     }
   }
 
