@@ -55,6 +55,15 @@ while (!gameOver) {
   if (i < gamesLeft) {
     rockPaperScissors(getPlayerChoice(), getComputerChoice());
   } else {
-    gameOver = true;
+    if (playerScore < computerScore) {
+      console.log(`The final score is: Player:${playerScore} - PC:${computerScore} \nThe Computer WINS! Good luck next time`);
+      gameOver = true;
+    } else if (playerScore > computerScore) {
+      console.log(`The final score is: Player:${playerScore} - PC:${computerScore} \nYou WIN! Congratulations`);
+      gameOver = true;
+    } else {
+      console.log(`The final score is: Player:${playerScore} - PC:${computerScore} \nYou both tied this time. No one wins, no one loses :)`);
+      gameOver = true;
+    }
   }
 }
