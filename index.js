@@ -39,7 +39,11 @@ function playRound(computerSelection, playerSelection) {
   } else {
 
     console.log(`Invalid input`);
+  }
 }
+
+let computerSelection = getComputerChoice();
+let playerSelection;
 
 
 /*
