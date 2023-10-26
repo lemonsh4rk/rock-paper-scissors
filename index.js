@@ -1,6 +1,7 @@
 let optionsButtons = document.querySelectorAll("button");
 let resultText = document.querySelector("#resulttext");
 let computerSelectionText = document.querySelector("#computerselectiontext");
+let playerSelectionText = document.querySelector("#playerselectiontext")
 let computerScoreText = document.querySelector("#computerscoretext");
 let playerScoreText = document.querySelector("#playerscoretext");
 let finalResultText = document.querySelector("#finalresulttext");
@@ -70,7 +71,8 @@ optionsButtons.forEach(selectionButton => selectionButton.addEventListener("clic
   playerSelection = selectionButton.textContent;
   computerSelection  = getComputerChoice();
 
-  computerSelectionText.textContent = `Computer played: ${computerSelection}`;
+  computerSelectionText.textContent = `And the computer chose: ${computerSelection}`;
+  playerSelectionText.textContent = `Your choise was: ${playerSelection}`
 
   playRound(computerSelection, playerSelection);
 
