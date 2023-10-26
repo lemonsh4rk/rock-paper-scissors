@@ -3,10 +3,15 @@ let resultText = document.querySelector("#resulttext");
 let computerSelectionText = document.querySelector("#computerselectiontext");
 let computerScoreText = document.querySelector("#computerscoretext");
 let playerScoreText = document.querySelector("#playerscoretext");
+let finalResultText = document.querySelector("#finalresulttext");
+let lineBreak = document.createElement("br");
 
 let gameOver = false;
 let playerScore = 0;
 let computerScore = 0;
+
+computerScoreText.textContent = `Computer score: ${computerScore}`;
+playerScoreText.textContent = `Player score: ${playerScore}`;
 
 let computerSelection;
 let playerSelection;
@@ -72,4 +77,27 @@ optionsButtons.forEach(selectionButton => selectionButton.addEventListener("clic
   computerScoreText.textContent = `Computer score: ${computerScore}`;
   playerScoreText.textContent = `Player score: ${playerScore}`;
 
+  if (computerScore == 5) {
+    finalResultText.innerHTML = `And the ultimate winner is: COMPUTER!!<br/>Choose an option again to restart the game`;
+    computerScore = 0;
+    playerScore = 0;
+
+    /*
+    if (computerScore <= 1 && playerScore <= 1 ) {
+      finalResultText.innerHTML = `Win 5 games and do your best!<br>Choose wisely...`;
+    }
+    */
+
+    } else if (playerScore == 5) {
+
+    finalResultText.innerHTML = `And the ultimate winner is: YOU!!<br/>Choose an option again to restart the game`;
+    computerScore = 0;
+    playerScore = 0;
+
+    /*
+    if (computerScore <= 1 && playerScore <= 1) {
+      finalResultText.innerHTML = `Win 5 games and do your best!<br>Choose wisely...`;
+    }
+    */
+  } 
 }))
