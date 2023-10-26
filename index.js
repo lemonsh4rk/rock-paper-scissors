@@ -1,4 +1,11 @@
+function getComputerChoice() {
+  
+  let choice = ["rock", "paper", "scissors"];
 
+  let random = Math.floor((Math.random() * choice.length))
+
+  return choice[random]
+}
 
 /*
 
