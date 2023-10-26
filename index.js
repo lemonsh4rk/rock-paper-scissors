@@ -1,138 +1,60 @@
-let gameOver = false;
-let gamesLeft = 5;
-let i = 0;
-let playerScore = 0;
-let computerScore = 0;
+// Randomize the computer choice
+function getComputerChoice() { 
 
-
-// We'll loop so the game keeps going while gameover is NOT true
-while (!gameOver) {
-
-  // Randomize the computer choice
-  function getComputerChoice() { 
-
-    let choice = ["rock", "paper", "scissors"];
-    let random = Math.floor((Math.random() * choice.length));
-    
-    return choice[random];
-
-  }
-
-  // Getting the player input, also outputting every input on lower case
-  function getPlayerChoice() {
-
-    let playerChoice = prompt("Choose: Rock - Paper or Scissors!") ;
-    return playerChoice.toLocaleLowerCase();
-
-  }
+  let choice = ["rock", "paper", "scissors"];
+  let random = Math.floor((Math.random() * choice.length));
   
-  // Here is the main game function
-  function rockPaperScissors(playerSelection, computerSelection) {
+  return choice[random];
 
-    console.log(`You played: ${playerSelection}`);
-    console.log(`Computer played: ${computerSelection}`)
+}
 
+// Getting the player input, also outputting every input on lower case
+function getPlayerChoice() {
 
-    // Every iteration of the rock, paper & scissors game and it's outcomes
-    if ((playerSelection === "rock") && (computerSelection === "paper")) {
+  let playerChoice = prompt("Choose: Rock - Paper or Scissors!") ;
+  return playerChoice.toLocaleLowerCase();
 
-      i++; //this is to count the number of tries, we then use it to substract it from the gamesLeft variable
-      computerScore++; // to keep track the score of the PC
+}
 
-      console.log(`You lose this one!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
+// Here is the main game function
+function rockPaperScissors(playerSelection, computerSelection) {
 
-      i++; 
-      computerScore++;
+  console.log(`You played: ${playerSelection}`);
+  console.log(`Computer played: ${computerSelection}`)
 
-      console.log(`You lose this one!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
+  // Every iteration of the rock, paper & scissors game and it's outcomes
+  if ((playerSelection === "rock") && (computerSelection === "paper")) {
 
-      i++;
-      computerScore++;
+    console.log(`You LOSE this one!`);
+  
+  } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
 
-      console.log(`You lose this one!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
+    console.log(`You LOSE this one!`);
+  
+  } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
 
-      i++;
-      playerScore++; // to keep track of the player score
+    console.log(`You LOSE this one!`);
+  
+  } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
 
-      console.log(`You win this one!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
+    console.log(`You WIN this one!`);
+  
+  } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
 
-      i++;
-      playerScore++;
+    console.log(`You WIN this one!`);
+  
+  } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
 
-      console.log(`You win this one!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
+    console.log(`You WIN this one!`);
+  
+  } else if (playerSelection === computerSelection){
 
-      i++;
-      playerScore++;
-
-      console.log(`You win this one!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else if (playerSelection === computerSelection){
-      i++;
-
-      console.log(`You tied, try again!\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-    
-    } else {
-
-      // we don't really want invalid inputs to substract from the number of games. So just a little synxtax reminder is useful
-      console.log(`Invalid input, please try again with: rock - paper - scissors\n
-      You have ${gamesLeft - i} games left\n
-      Current Score is: Player:${playerScore} - PC:${computerScore}`);
-
-    }
-  }
-
-
-  // Here we count i and see if it reaches the number of games left, while it is < it'll keep playing again and again
-  if (i < gamesLeft) {
-
-    rockPaperScissors(getPlayerChoice(), getComputerChoice());
-
+    console.log(`You TIED, try again!`);
+  
   } else {
 
-    // The the games left reach 0 we want to declare a winner, here's every outcome
-    if (playerScore < computerScore) {
+    // we don't really want invalid inputs to substract from the number of games. So just a little synxtax reminder is useful
+    console.log(`Invalid input, please try again with: rock - paper - scissors`);
 
-      console.log(`The final score is: Player:${playerScore} - PC:${computerScore} \n
-      The Computer WINS! Good luck next time`);
-
-      gameOver = true;
-    } else if (playerScore > computerScore) {
-
-      console.log(`The final score is: Player:${playerScore} - PC:${computerScore} \n
-      You WIN! Congratulations`);
-
-      gameOver = true;
-    } else {
-
-      console.log(`The final score is: Player:${playerScore} - PC:${computerScore} \n
-      You both tied this time. No one wins, no one loses :)`);
-
-      gameOver = true;
-
-    }
   }
 }
