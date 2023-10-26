@@ -1,34 +1,34 @@
 function getComputerChoice() {
 
-  let choice = ["rock", "paper", "scissors"];
+  let choice = ["ROCK", "PAPER", "SCISSORS"];
+  let random = Math.floor((Math.random() * choice.length));
 
-  let random = Math.floor((Math.random() * choice.length))
-
-  return choice[random]
+  return choice[random];
 }
+  
 
 function playRound(computerSelection, playerSelection) {
-  if ((playerSelection === "rock") && (computerSelection === "paper")) {
+  if ((playerSelection === "ROCK") && (computerSelection === "PAPER")) {
 
     console.log(`You LOSE! Paper beats rock`);
   
-  } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
+  } else if ((playerSelection === "PAPER") && (computerSelection === "SCISSORS")) {
 
     console.log(`You LOSE! Scissor beats rock`);
   
-  } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
+  } else if ((playerSelection === "SCISSORS") && (computerSelection === "ROCK")) {
 
     console.log(`You LOSE! Rock beats scissors`);
   
-  } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
+  } else if ((playerSelection === "ROCK") && (computerSelection === "SCISSORS")) {
 
     console.log(`You WIN! Rock beats scissors`);
   
-  } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
+  } else if ((playerSelection === "PAPER") && (computerSelection === "ROCK")) {
 
     console.log(`You WIN! Paper beats rock`);
   
-  } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
+  } else if ((playerSelection === "SCISSORS") && (computerSelection === "PAPER")) {
 
     console.log(`You WIN! Scissor beats paper`);
   
@@ -42,8 +42,18 @@ function playRound(computerSelection, playerSelection) {
   }
 }
 
-let computerSelection = getComputerChoice();
+let options = document.querySelectorAll("button")
+
+let computerSelection;
 let playerSelection;
+
+options.forEach(selection => selection.addEventListener("click", () => {
+  playerSelection = selection.textContent;
+  computerSelection  = getComputerChoice();
+  playRound(computerSelection, playerSelection)
+}))
+
+
 
 
 /*
