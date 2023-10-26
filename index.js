@@ -1,5 +1,6 @@
 let optionsButtons = document.querySelectorAll("button")
 let resultText = document.querySelector("#resulttext")
+let computerSelectionText = document.querySelector("#computerselectiontext")
 
 
 let computerSelection;
@@ -53,7 +54,7 @@ optionsButtons.forEach(selectionButton => selectionButton.addEventListener("clic
   playerSelection = selectionButton.textContent;
   computerSelection  = getComputerChoice();
 
-
+  computerSelectionText.textContent = `Computer Played: ${computerSelection}`;
 
   playRound(computerSelection, playerSelection)
 }))
