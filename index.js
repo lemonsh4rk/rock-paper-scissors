@@ -1,11 +1,46 @@
 function getComputerChoice() {
-  
+
   let choice = ["rock", "paper", "scissors"];
 
   let random = Math.floor((Math.random() * choice.length))
 
   return choice[random]
 }
+
+function playRound(computerSelection, playerSelection) {
+  if ((playerSelection === "rock") && (computerSelection === "paper")) {
+
+    console.log(`You LOSE! Paper beats rock`);
+  
+  } else if ((playerSelection === "paper") && (computerSelection === "scissors")) {
+
+    console.log(`You LOSE! Scissor beats rock`);
+  
+  } else if ((playerSelection === "scissors") && (computerSelection === "rock")) {
+
+    console.log(`You LOSE! Rock beats scissors`);
+  
+  } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
+
+    console.log(`You WIN! Rock beats scissors`);
+  
+  } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
+
+    console.log(`You WIN! Paper beats rock`);
+  
+  } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
+
+    console.log(`You WIN! Scissor beats paper`);
+  
+  } else if (playerSelection === computerSelection){
+
+    console.log(`You TIED!`);
+  
+  } else {
+
+    console.log(`Invalid input`);
+}
+
 
 /*
 
