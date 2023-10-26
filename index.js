@@ -48,8 +48,10 @@ let computerSelection;
 let playerSelection;
 
 options.forEach(selection => selection.addEventListener("click", () => {
+
   playerSelection = selection.textContent;
   computerSelection  = getComputerChoice();
+  
   playRound(computerSelection, playerSelection)
 }))
 
