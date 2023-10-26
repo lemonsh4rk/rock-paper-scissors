@@ -77,27 +77,20 @@ optionsButtons.forEach(selectionButton => selectionButton.addEventListener("clic
   computerScoreText.textContent = `Computer score: ${computerScore}`;
   playerScoreText.textContent = `Player score: ${playerScore}`;
 
+  if (computerScore <= 1 && playerScore <= 1 ) {
+    finalResultText.innerHTML = `Win 5 games and do your best!<br>Choose wisely...`;
+  }  
+
+
   if (computerScore == 5) {
     finalResultText.innerHTML = `And the ultimate winner is: COMPUTER!!<br/>Choose an option again to restart the game`;
     computerScore = 0;
     playerScore = 0;
-
-    /*
-    if (computerScore <= 1 && playerScore <= 1 ) {
-      finalResultText.innerHTML = `Win 5 games and do your best!<br>Choose wisely...`;
-    }
-    */
 
     } else if (playerScore == 5) {
 
     finalResultText.innerHTML = `And the ultimate winner is: YOU!!<br/>Choose an option again to restart the game`;
     computerScore = 0;
     playerScore = 0;
-
-    /*
-    if (computerScore <= 1 && playerScore <= 1) {
-      finalResultText.innerHTML = `Win 5 games and do your best!<br>Choose wisely...`;
-    }
-    */
   } 
 }))
