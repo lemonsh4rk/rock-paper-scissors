@@ -1,3 +1,7 @@
+
+
+/*
+
 // Randomize the computer choice
 function getComputerChoice() { 
 
@@ -17,7 +21,7 @@ function getPlayerChoice() {
 }
 
 // Here is the main game function
-function rockPaperScissors(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
 
   console.log(`You played: ${playerSelection}`);
   console.log(`Computer played: ${computerSelection}`)
@@ -58,3 +62,5 @@ function rockPaperScissors(playerSelection, computerSelection) {
 
   }
 }
+
+*/
