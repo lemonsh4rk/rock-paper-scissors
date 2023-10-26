@@ -72,7 +72,7 @@ optionsButtons.forEach(selectionButton => selectionButton.addEventListener("clic
   computerSelection  = getComputerChoice();
 
   computerSelectionText.textContent = `And the computer chose: ${computerSelection}`;
-  playerSelectionText.textContent = `Your choise was: ${playerSelection}`
+  playerSelectionText.textContent = `Your choice was: ${playerSelection}`
 
   playRound(computerSelection, playerSelection);
 
